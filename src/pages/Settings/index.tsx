@@ -320,7 +320,7 @@ export default function Settings() {
                 >
                     <ProxySection />
                 </Tab>
-                {!isPreview && (
+                {false && (
                     <Tab
                         key="license"
                         title={

@@ -199,45 +199,9 @@ async function checkHostReachability(): Promise<void> {
 }
 
 async function validateInstance() {
-    console.log('[validateInstance] validating license')
-
-    const licenseKey = usePersistedStore.getState().licenseKey
-    if (!licenseKey) {
-        console.log('[validateInstance] no license key, skipping license validation')
-        usePersistedStore.setState({ licenseValid: false })
-        return
-    }
-
-    if (!navigator.onLine) {
-        console.log('[validateInstance] not online, skipping license validation')
-        return
-    }
-
-    try {
-        await validateLicense(licenseKey)
-    } catch (e) {
-        console.log('[validateInstance] error validating license, marking as invalid')
-        usePersistedStore.setState({ licenseValid: false })
-
-        if (e instanceof Error) {
-            await message(e.message, {
-                title: 'Error Validating License',
-                kind: 'error',
-                okLabel: 'OK',
-            })
-            console.log('[validateInstance] error message displayed, returning')
-            return
-        }
-
-        await message('An error occurred while validating your license. Please try again.', {
-            title: 'Error',
-            kind: 'error',
-            okLabel: 'OK',
-        })
-        console.log('[validateInstance] default error message displayed, returning')
-    } finally {
-        console.log('[validateInstance] license validation complete')
-    }
+    console.log('[validateInstance] personal fork - skipping license validation')
+    // Personal fork: all features unlocked
+    usePersistedStore.setState({ licenseValid: true })
 }
 
 async function checkAlreadyRunning() {
