@@ -13,7 +13,6 @@ import { defaultOptions } from 'tauri-plugin-sentry-api'
 import { getDeepLinkUrl, handleDeepLinkUrl } from './lib/deep'
 import { CLOSE_APP, RELAUNCH_APP, RESTART_RCLONE, type RestartRclonePayload } from './lib/events'
 import { LOCAL_HOST_ID, RC_PORT, getHostInfo, makeLocalHost } from './lib/hosts'
-import { validateLicense } from './lib/license'
 import {
     clearWatchedJobs,
     dispatchNotification,
