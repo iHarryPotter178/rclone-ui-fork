@@ -43,14 +43,37 @@ jobs:
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+           
           # for updates
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         with:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
-          releaseName: 'v__VERSION__'
-          releaseBody: 'See the assets to download this version and install.'
-          releaseDraft: true
-          prerelease: false
+          releaseName: 'v__VERSION__ - Personal Fork (License Unrestricted)'
+          releaseBody: |
+           # Rclone UI - Personal Fork (License Unrestricted)
+            
+           All premium features unlocked! No license key required.
+            
+           ## 🎯 Features Included
+           - ✅ File previews (images, PDFs, documents, spreadsheets, presentations, videos)
+           - ✅ Unlimited remote configurations
+           - ✅ Unlimited notification targets
+           - ✅ Multi-source copy/move operations
+           - ✅ Advanced scheduling
+           - ✅ Full offline operation
+            
+           ## 📦 Downloads
+           - **rclone-ui_*.deb** - Debian/Ubuntu package
+           - **rclone-ui_*.AppImage** - Universal Linux AppImage
+            
+           ## 📖 Documentation
+           See [PERSONAL_FORK_README.md](https://github.com/iHarryPotter178/rclone-ui-fork/blob/iharrypotter178-remove-license-restrictions/PERSONAL_FORK_README.md) for installation and usage.
+            
+           ## ⚠️ Important
+           - Personal use only
+           - All license restrictions removed
+           - Works completely offline
+          releaseDraft: false
+          prerelease: true
           args: ${{ matrix.args }}
