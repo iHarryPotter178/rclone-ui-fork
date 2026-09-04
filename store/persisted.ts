@@ -128,9 +128,9 @@ export const usePersistedStore = create<PersistedStateV2>()(
             settingsPass: undefined,
             setSettingsPass: (pass: string | undefined) => set((_) => ({ settingsPass: pass })),
 
-            licenseKey: undefined,
+            licenseKey: 'personal-unlimited',
             setLicenseKey: (key: string | undefined) => set((_) => ({ licenseKey: key })),
-            licenseValid: false,
+            licenseValid: true,
             setLicenseValid: (valid: boolean) => set((_) => ({ licenseValid: valid })),
 
             startOnBoot: false,
